@@ -3,7 +3,7 @@ var path =require('path');
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://test:testtest@ds111469.mlab.com:11469/iqqeqq");
+mongoose.connect(process.env.MONGO_DB);
 var db = mongoose.connection;
 db.once("open", function () {
   console.log("DB connected!");
